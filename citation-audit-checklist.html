@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Citation Audit</title>
+<meta name="description" content="A manual protocol for testing whether AI search cites your brand.">
+<style>
+  :root {
+    --bg: #0A0C0F; --ink: #E9EEF4; --muted: #8B97A5;
+    --accent: #4ADE80; --line: #1C2229;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 64px 24px 120px;
+    background: var(--bg); color: var(--ink);
+    font: 17px/1.65 "Segoe UI", system-ui, -apple-system, sans-serif;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 40px; line-height: 1.15; letter-spacing: -0.02em; margin: 0 0 8px; }
+  h2 {
+    font-size: 26px; margin: 56px 0 16px; letter-spacing: -0.01em;
+    padding-top: 28px; border-top: 1px solid var(--line);
+  }
+  h3 { font-size: 20px; margin: 32px 0 10px; }
+  p, li { color: #C7D1DC; }
+  strong { color: var(--ink); }
+  em { color: var(--muted); }
+  a { color: var(--accent); }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+  code { font-family: Consolas, monospace; font-size: 0.92em; color: var(--accent); }
+  blockquote {
+    margin: 24px 0; padding-left: 20px;
+    border-left: 3px solid var(--accent); color: var(--muted);
+  }
+  table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 15px; display: block; overflow-x: auto; }
+  th, td { border: 1px solid var(--line); padding: 10px 12px; text-align: left; }
+  th { color: var(--accent); font-weight: 600; }
+  ol, ul { padding-left: 24px; }
+  li { margin-bottom: 10px; }
+  .footer { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--line); color: var(--muted); font-size: 15px; }
+  @media (max-width: 640px) { body { padding: 40px 18px 80px; } h1 { font-size: 32px; } }
+</style>
+</head><body><main><h1>The Citation Audit</h1>
+<p><strong>A protocol for finding out whether AI search knows your brand exists.</strong></p>
+<p>From @thecitationlab</p>
+<hr>
+<p>Most &quot;AI visibility audits&quot; are a vendor running their own tool and selling you the output. This is the manual version. It takes about 40 minutes, costs nothing, and you own the result.</p>
+<p>It will tell you three things: whether you get cited at all, which competitors get cited instead, and whether your problem is your site or the rest of the internet.</p>
+<p>That third one is the important one, and almost nobody checks it.</p>
+<hr>
+<h2>Before you start</h2>
+<ul>
+<li>A spreadsheet</li>
+<li>40 minutes</li>
+<li>Logged-out or incognito sessions for every engine. Personalisation will quietly corrupt your results and you&#39;ll never notice.</li>
+</ul>
+<p>One warning up front: this measures a moving target. Google switched AI Overviews to Gemini 3 on 27 January 2026 and citation behaviour shifted noticeably within days. A result from three months ago is history, not data.</p>
+<hr>
+<h2>Step 1 — Write 5 buyer prompts</h2>
+<p>Not keywords. Prompts. The sentence a real buyer types when they don&#39;t know your brand yet.</p>
+<p>Good:</p>
+<ul>
+<li>&quot;best project management tool for a 12-person agency&quot;</li>
+<li>&quot;alternatives to [competitor] for teams that hate timesheets&quot;</li>
+<li>&quot;what should I look for in a [category] vendor&quot;</li>
+</ul>
+<p>Bad:</p>
+<ul>
+<li>Your brand name. That tests recall, not discovery, and it will flatter you.</li>
+<li>Anything with your product&#39;s exact positioning language in it. You&#39;ll get cited and learn nothing.</li>
+</ul>
+<p>The test is only as honest as the prompts. Write them before you look at any results.</p>
+<hr>
+<h2>Step 2 — Run each prompt 10 times</h2>
+<p>Per engine: ChatGPT, Perplexity, Google AI Overviews, Gemini.</p>
+<p><strong>New session every single time.</strong> Not a new message in the same chat. These models carry context and will start agreeing with themselves, which produces a beautiful, consistent, completely fake result.</p>
+<p>50 runs per engine. It&#39;s tedious. That tedium is the moat — it&#39;s why nobody has your data.</p>
+<hr>
+<h2>Step 3 — Log every run</h2>
+<table>
+<thead>
+<tr>
+<th>Prompt</th>
+<th>Engine</th>
+<th>Run #</th>
+<th>Brands named (in order)</th>
+<th>You cited?</th>
+<th>Linked?</th>
+<th>Source domains</th>
+</tr>
+</thead>
+</table>
+<p>Record every brand named, in order. Order matters more than people assume — first-named is disproportionately what gets clicked.</p>
+<p>Track &quot;cited&quot; and &quot;linked&quot; separately. Being mentioned in prose without a link is worth far less, and a lot of tools conflate the two.</p>
+<hr>
+<h2>Step 4 — Read it</h2>
+<p>Four outcomes. Find yours.</p>
+<p><strong>Never named in 50 runs.</strong> You have a consensus problem, not a product problem. The model isn&#39;t ranking products — it&#39;s summarising what the internet says about products, and the internet isn&#39;t saying anything about you. No amount of on-site work fixes this. Go to Step 5.</p>
+<p><strong>Named occasionally, never first.</strong> You exist but you&#39;re not the default. Usually a depth problem: you appear in a few roundups, competitors appear in dozens.</p>
+<p><strong>Named only on prompts containing your positioning language.</strong> You&#39;re visible to people already halfway to buying you, and invisible to everyone earlier. This is the most common result for well-run marketing teams and the easiest to mistake for success.</p>
+<p><strong>Named consistently, cited with links.</strong> Genuinely good. Re-test quarterly and watch for erosion, because that&#39;s what the trend data says is coming.</p>
+<hr>
+<h2>Step 5 — Fixes, in order of actual leverage</h2>
+<p>Ordered by return, not by how enjoyable they are.</p>
+<ol>
+<li><p><strong>Get into third-party roundups.</strong> The &quot;best X for Y&quot; listicles you don&#39;t control. Every consistently-cited brand we&#39;ve looked at appears in several. This is the highest-leverage and least popular item on the list, because it&#39;s outreach and everyone would rather write a blog post.</p>
+</li>
+<li><p><strong>Put your pricing on a public URL.</strong> Structured, parseable, no &quot;contact sales&quot; wall. Models cite what they can read.</p>
+</li>
+<li><p><strong>Get the grounding sources right.</strong> Wikipedia, G2, Crunchbase, category directories. These are what the engines reach for when they need a fact they can stand behind.</p>
+</li>
+<li><p><strong>Write the comparison page yourself.</strong> You vs the alternatives, honestly. It gets cited more than your homepage. Yes, including where you lose.</p>
+</li>
+<li><p><strong>Then do the on-site work.</strong> Schema, clean headings, direct answers near the top. It matters, but it&#39;s fifth for a reason, and most agencies sell it first because it&#39;s the part they can bill for.</p>
+</li>
+</ol>
+<hr>
+<h2>Step 6 — Re-test</h2>
+<p>Quarterly at minimum. Immediately after any major model release.</p>
+<p>Keep every run. The single most valuable thing you&#39;ll own in 12 months is a time series nobody else bothered to collect.</p>
+<hr>
+<h2>What this doesn&#39;t tell you</h2>
+<p>Worth being straight about the limits.</p>
+<ul>
+<li>50 runs is enough to see a pattern, not enough for statistical significance. Treat 20% and 25% as the same number.</li>
+<li>It measures citation, not traffic or revenue. The relationship between them is not established, by anyone, yet.</li>
+<li>Engines vary by region. If you sell internationally, run it from each market or accept that you&#39;ve measured one.</li>
+</ul>
+<p>Anyone selling you more certainty than that is selling you something.</p>
+<hr>
+<p><em>Found this useful, or found a hole in it? Reply and tell me — corrections get posted.</em></p>
+<p><strong>@thecitationlab</strong></p>
+
+<div class="footer">More tests like this at <a href="https://instagram.com/thecitationlab">@thecitationlab</a>.</div>
+</main></body></html>
